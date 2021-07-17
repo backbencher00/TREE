@@ -10,14 +10,12 @@
 using namespace std;
 struct node{
 	int data;
-	node *left;
-	node *right;
+	node *left;node *right;
 	node(int val){
 		data=val;;
 		left=NULL;
 		right=NULL;
 	}
-
 };
 void preorder(node *root){
 	if(root==NULL)return;
@@ -34,7 +32,7 @@ void postorder(node *root){
 void inorder(node *root){
 	if(root==NULL)return ;
 	inorder(root->left);
- cout<<root->data<<" ";
+        cout<<root->data<<" ";
 	inorder(root->right);
 	
 }
