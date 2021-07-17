@@ -159,11 +159,15 @@ int main(){
     
 }
 ```
-Some Other traversal
+### Some Other traversal
 4. Reverse Level Order
+
 5. Diagonal Traversal
+
 6. Zig-Zag
+ 
 7. Boundary Traversal
+
 ### Tree General question
 
 1. Right View
