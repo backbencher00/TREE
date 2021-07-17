@@ -95,6 +95,47 @@ void inorder(node *root){
 	inorder(root->right);
 	
 }
+void preorderIterative(node *root){
+	if(root==NULL)return ;
+	stack<node*>s;
+	s.push(root);
+	while(!s.empty()){
+       node* temp=s.top();
+       s.pop();
+       cout<<temp->data<<" ";
+       if(temp->right)s.push(temp->right);
+       if(temp->left)s.push(temp->left);   
+	}
+}
+ void postOrderIterative(node *root){
+    stack<node*>s;
+    vector<int>v;
+    s.push(root);
+    while(!s.empty()){
+         node*temp=s.top();
+         s.pop();
+         v.push_back(temp->data);
+         if(temp->left)s.push(temp->left);
+         if(temp->right)s.push(temp->right);
+    }
+     for(auto it=v.end()-1;it!=v.begin()-1;it--)cout<<*it<<" ";   
+}
+void inorderIterative(node* root){
+    stack<node*> stack;
+    node* curr = root;
+    while (!stack.empty() || curr != nullptr){ 
+        if (curr != nullptr){
+            stack.push(curr);
+            curr = curr->left;
+        }
+        else {
+            curr = stack.top();
+            stack.pop();
+            cout << curr->data << " ";
+            curr = curr->right;
+        }
+    }
+}
 int main(){
     node* root = new node(1);
     root->left = new node(2);
@@ -105,8 +146,16 @@ int main(){
     root->right->left->left = new node(7);
     root->right->left->right = new node(8);
     preorder(root);
+    cout<<endl;
+    preorderIterative(root);
+    cout<<endl;
     postorder(root);
+    cout<<endl;
+    postOrderIterative(root);
+    cout<<endl;
     inorder(root);
+    cout<<endl;
+    inorderIterative(root);
     
 }
 ```
