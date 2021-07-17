@@ -2,8 +2,8 @@
 ### Tree Traversal
 1. BFS(Level order Traversal)
 2. DFS
- - preorder(Left-right-root)
- - postorder(Root-Right-Left)
+ - preorder(Root-Left-right)
+ - postorder(Left-Right-Root)
  - inorder(Left-Root-Right)
 Some Other traversal
 4. Reverse Level Order
