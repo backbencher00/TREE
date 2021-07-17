@@ -10,12 +10,12 @@ struct node{
 	node *right;
 	node(int val){
 		data=val;;
-		left=NULL;
-		right=NULL;
+		left=NULL;right=NULL;
 	}
 
 };
-void levelOrder(node* root){ 
+//Iterative solution
+void levelOrderIter(node* root){ 
     queue<node *>q;
     q.push(root);
     while(!q.empty()){
@@ -26,6 +26,7 @@ void levelOrder(node* root){
         if(temp->right)q.push(temp->right);
     }
 }
+// recursive solution
 int height(node* root){
     if(root==NULL)return 0;
     return max(height(root->left), height(root->right))+1;
@@ -38,7 +39,9 @@ void printlevel(node * root, int level){
 }
 void levelOrderRec(node *root){
 	int h=height(root);
-	for(int i=0;i<h;i++)printlevel(root, i);
+	for(int i=0;i<h;i++){
+		printlevel(root, i);
+	}
 }
 
 int main(){
@@ -50,11 +53,11 @@ int main(){
     root->right->right = new node(6);
     root->right->left->left = new node(7);
     root->right->left->right = new node(8);
-    root->right->left->right->left = new node(8);
-    root->right->left->right->left->right = new node(8);
-    cout<<height(root)<<endl;
     levelOrderRec(root);
+    cout<<endl;
+    levelOrderIter(root);
 
+}
 }
 ```
 3. DFS
