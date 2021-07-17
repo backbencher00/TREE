@@ -1,5 +1,5 @@
 # TREE
-###Tree Traversal -
+### Tree Traversal
 1. BFS(Level order Traversal)
 2. DFS
  - preorder(Left-right-root)
