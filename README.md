@@ -1,5 +1,5 @@
 # TREE
-Tree Traversal -
+###Tree Traversal -
 1. BFS(Level order Traversal)
 2. DFS
  - preorder(Left-right-root)
@@ -10,13 +10,14 @@ Some Other traversal
 2. Diagonal Traversal
 3. Zig-Zag
 4. Boundary Traversal
-Tree General question
-Right View
-Left View
-Bottom View
-Top View
-Height of a tree
-Diameter of a tree
-Mirror of a tree
+### Tree General question
+
+1. Right View
+2. Left View
+3. Bottom View
+4. Top View
+5. Height of a tree
+6. Diameter of a tree
+7. Mirror of a tree
 
 
