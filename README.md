@@ -171,11 +171,95 @@ int main(){
 ### Tree General question
 
 1. Right View
-2. Left View
-3. Bottom View
-4. Top View
-5. Height of a tree
-6. Diameter of a tree
-7. Mirror of a tree
+```cpp
+#include<bits/stdc++.h>
+using namespace std;
+struct node{
+	int data;
+	node *left;
+	node *right;
+	node(int val){
+		data=val;;
+		left=NULL;
+		right=NULL;
+	}
+
+};
+void leftview(node *root, int curr, bool *level){
+	if(root==NULL)return;
+	if(level[curr]==false){
+		cout<<root->data<<" ";
+		level[curr]=true;
+	}
+	leftview(root->left, curr+1, level);
+	leftview(root->right, curr+1, level);
+}
+void  rightview(node *root, bool *level, int curr ){
+        if(root==NULL)return;
+        if(level[curr]==false){
+            level[curr]=true;
+            cout<<root->data<<" ";
+             
+        }
+        rightview(root->right, level, curr+1);
+        rightview(root->left, level, curr+1 );
+}
+void fill(node* root,int d,int l,map<int,pair<int,int>> &m){
+    if(root==NULL) return;
+ 
+    if(m.count(d)==0)m[d] = make_pair(root->data,l);
+    else if(m[d].second>l)m[d] = make_pair(root->data,l);
+ 
+    fill(root->left,d-1,l+1,m);
+    fill(root->right,d+1,l+1,m);
+}
+void topView(struct node *root){  
+    map<int,pair<int,int>> m;
+    fill(root,0,0,m);
+    for(auto i=m.begin();i!=m.end();i++)cout << i->second.first << " ";
+     
+}
+void visitbottom(node *node, int dist, int level, map<int ,pair<int,int>> &mp)
+{ 
+    if(node == nullptr)return;
+    if(level >=mp[dist].second)mp[dist]={node->data,level};
+    
+    visitbottom(node->left, dist - 1, level + 1, mp);
+    visitbottom(node->right, dist + 1, level + 1, mp);
+}
+ 
+  
+void bottomView(node *root){
+     
+    map<int, pair<int,int>> mp;
+    visitbottom(root, 0, 0, mp);
+    for(auto it =mp.begin();it!=mp.end();it++)cout << it->second.first << " ";
+      
+}
+
+    
+int main(){
+	 
+    node* root = new node(1);
+    root->left = new node(2);
+    root->right = new node(3);
+    root->left->left = new node(4);
+    root->right->left = new node(5);
+    root->right->right = new node(6);
+    root->right->left->left = new node(7);
+    root->right->left->right = new node(8);
+    bool level[10000]={false};
+    rightview(root, level, 0);
+    level[]={false};
+    leftview(root,0,level);
+}
+
+```
+3. Left View
+4. Bottom View
+5. Top View
+6. Height of a tree
+7. Diameter of a tree
+8. Mirror of a tree
 
 
