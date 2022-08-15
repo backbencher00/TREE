@@ -1,22 +1,23 @@
-# TREE
+## TREE
 ### Tree Traversal
 1. 
-2. DFS
+2. ~DFS
  - preorder(Root-Left-right)
  - postorder(Left-Right-Root)
  - inorder(Left-Root-Right)
 
-3. BFS(Level order Traversal)
-4.Reverse Level Order
-5. Zig-Zag
-6. Diagonal Traversal 
-7. Boundary Traversal
-8. Left View
-9. Bottom View
-10. Top View
-11. Height of a tree
-12. Diameter of a tree
-13. Mirror of a tree
+3. ~BFS
+ - Level order Traversal
+ - Reverse Level Order
+4. Zig-Zag
+5. Diagonal Traversal 
+6. Boundary Traversal
+7. Left View
+8. Bottom View
+9. Top View
+10. Height of a tree
+11. Diameter of a tree
+12. Mirror of a tree
 ```cpp
 #include<bits/stdc++.h>
 using namespace std;
